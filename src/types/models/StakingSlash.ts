@@ -40,6 +40,13 @@ export class StakingSlash implements Entity {
     }
 
 
+    static async getByAccountId(accountId: string): Promise<StakingSlash[] | undefined>{
+      
+      const records = await store.getByField('StakingSlash', 'accountId', accountId);
+      return records.map(record => StakingSlash.create(record));
+      
+    }
+
 
     static create(record){
         let entity = new StakingSlash(record.id);

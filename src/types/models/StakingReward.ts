@@ -40,6 +40,13 @@ export class StakingReward implements Entity {
     }
 
 
+    static async getByAccountId(accountId: string): Promise<StakingReward[] | undefined>{
+      
+      const records = await store.getByField('StakingReward', 'accountId', accountId);
+      return records.map(record => StakingReward.create(record));
+      
+    }
+
 
     static create(record){
         let entity = new StakingReward(record.id);
