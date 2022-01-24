@@ -1,2 +1,3 @@
-export * from './mappings/Reward';
-export * from './mappings/Staking';
+import "@polkadot/api-augment";
+export * from "./mappings/Reward";
+export * from "./mappings/Staking";

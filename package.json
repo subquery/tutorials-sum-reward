@@ -6,7 +6,7 @@
   "homepage": "https://github.com/subquery/subql-examples",
   "repository": "github:subquery/subql-examples",
   "scripts": {
-    "build": "tsc -b",
+    "build": "./node_modules/.bin/subql build",
     "prepack": "rm -rf dist && npm build",
     "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
     "codegen": "./node_modules/.bin/subql codegen"
@@ -19,7 +19,7 @@
   "author": "Jay Ji",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@polkadot/api": "^6",
+    "@polkadot/api": "^7",
     "@subql/types": "latest",
     "typescript": "4.4.4",
     "@subql/cli": "latest"
