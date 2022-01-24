@@ -1,6 +1,8 @@
 // Auto-generated , DO NOT EDIT
-import {Entity} from "@subql/types";
+import {Entity, FunctionPropertyNames} from "@subql/types";
 import assert from 'assert';
+
+
 
 
 export class StakingSlash implements Entity {
@@ -48,7 +50,8 @@ export class StakingSlash implements Entity {
     }
 
 
-    static create(record){
+    static create(record: Partial<Omit<StakingSlash, FunctionPropertyNames<StakingSlash>>> & Entity): StakingSlash {
+        assert(typeof record.id === 'string', "id must be provided");
         let entity = new StakingSlash(record.id);
         Object.assign(entity,record);
         return entity;

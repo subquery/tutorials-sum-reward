@@ -1,6 +1,8 @@
 // Auto-generated , DO NOT EDIT
-import {Entity} from "@subql/types";
+import {Entity, FunctionPropertyNames} from "@subql/types";
 import assert from 'assert';
+
+
 
 
 export class SumReward implements Entity {
@@ -41,7 +43,8 @@ export class SumReward implements Entity {
 
 
 
-    static create(record){
+    static create(record: Partial<Omit<SumReward, FunctionPropertyNames<SumReward>>> & Entity): SumReward {
+        assert(typeof record.id === 'string', "id must be provided");
         let entity = new SumReward(record.id);
         Object.assign(entity,record);
         return entity;

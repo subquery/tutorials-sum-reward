@@ -1,6 +1,8 @@
 // Auto-generated , DO NOT EDIT
-import {Entity} from "@subql/types";
+import {Entity, FunctionPropertyNames} from "@subql/types";
 import assert from 'assert';
+
+
 
 
 export class NoBondRecordAccount implements Entity {
@@ -37,7 +39,8 @@ export class NoBondRecordAccount implements Entity {
 
 
 
-    static create(record){
+    static create(record: Partial<Omit<NoBondRecordAccount, FunctionPropertyNames<NoBondRecordAccount>>> & Entity): NoBondRecordAccount {
+        assert(typeof record.id === 'string', "id must be provided");
         let entity = new NoBondRecordAccount(record.id);
         Object.assign(entity,record);
         return entity;
